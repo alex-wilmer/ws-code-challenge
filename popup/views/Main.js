@@ -1,6 +1,5 @@
 import React from 'react';
 import connector from '../connector';
-import Fade from './Fade';
 
 export default connector(({ dispatch, countries, selectedCountryIndex }) => (
   <>
