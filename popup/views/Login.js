@@ -1,16 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import id from 'lodash.identity';
 import Spinner from 'react-spinkit';
 import posed from 'react-pose';
 import Component from '@reactions/component';
+import connector from '../connector';
 
 let Button = posed.button({
   default: { background: '#88c53a', width: 80 },
   loading: { background: '#c63a3a', width: 100 },
 });
 
-export default connect(id)(({ dispatch, loading, error }) => (
+export default connector(({ dispatch, loading, error }) => (
   <Component initialState={{ username: '', password: '' }}>
     {({
       setState,

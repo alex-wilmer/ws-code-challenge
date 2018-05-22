@@ -1,8 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import id from 'lodash.identity';
+import connector from '../connector';
 
-export default connect(id)(({ dispatch, options }) => (
+export default connector(({ dispatch, options }) => (
   <>
     <div onClick={() => dispatch({ type: 'CHANGE_VIEW', payload: 'Main' })}>
       BACK

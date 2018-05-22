@@ -1,10 +1,8 @@
 import React from 'react';
-import id from 'lodash.identity';
-import { connect } from 'react-redux';
-import Component from '@reactions/component';
+import connector from '../connector';
 import Fade from './Fade';
 
-export default connect(id)(({ dispatch, countries, selectedCountryIndex }) => (
+export default connector(({ dispatch, countries, selectedCountryIndex }) => (
   <>
     <div className="header">
       <div className="logout" onClick={() => dispatch({ type: 'LOGOUT' })}>
