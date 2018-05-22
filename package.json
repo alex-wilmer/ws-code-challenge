@@ -20,10 +20,12 @@
   },
   "scripts": {
     "watch": "nodemon --exec 'yarn build' --watch popup --watch background",
-    "build": "rm -rf src && cp -r popup src && react-scripts build && mv build tmp_build && rm -rf src && cp -r background src && react-scripts build && mv build/static/js/main.*.js tmp_build/background.js && rm -rf build && mv tmp_build build && rm -rf src"
+    "build-section": "react-scripts build",
+    "build": "node build"
   },
   "devDependencies": {
     "nodemon": "^1.17.4",
+    "ora": "^2.1.0",
     "prettier": "^1.12.1"
   },
   "prettier": {
@@ -36,11 +38,6 @@
       "last 2 firefox versions",
       "last 2 edge versions"
     ],
-    "production": [
-      ">1%",
-      "last 4 versions",
-      "Firefox ESR",
-      "not ie < 11"
-    ]
+    "production": [">1%", "last 4 versions", "Firefox ESR", "not ie < 11"]
   }
 }
