@@ -1,0 +1,46 @@
+{
+  "name": "ws-ext",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reactions/component": "^2.0.2",
+    "await-sleep": "^0.0.1",
+    "emotion": "^9.1.3",
+    "lodash.identity": "^3.0.0",
+    "react": "^16.3.2",
+    "react-chrome-redux": "^2.0.0-alpha.1",
+    "react-dom": "^16.3.2",
+    "react-pose": "^1.6.4",
+    "react-redux": "^5.0.7",
+    "react-scripts": "^2.0.0-next.66cc7a90",
+    "react-spinkit": "^3.0.0",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.3.2",
+    "redux-logic": "^0.13.0"
+  },
+  "scripts": {
+    "watch": "nodemon --exec 'yarn build' --watch popup --watch background",
+    "build": "rm -rf src && cp -r popup src && react-scripts build && mv build tmp_build && rm -rf src && cp -r background src && react-scripts build && mv build/static/js/main.*.js tmp_build/background.js && rm -rf build && mv tmp_build build && rm -rf src"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4",
+    "prettier": "^1.12.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
+  }
+}
